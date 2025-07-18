@@ -7,23 +7,23 @@ Guía práctica para implementar un proxy inverso con Caddy sobre Docker en un s
 Este proyecto te permite acceder de forma segura a servicios como Pi-hole, Nextcloud o Jellyfin desde tu red local, usando HTTPS y sin necesidad de dominios públicos ni puertos abiertos al exterior.
 
 🔐 **HTTPS local con tu propia CA**:
-Caddy cifra las conexiones usando certificados autofirmados generados por vos mismo.
+Caddy cifra las conexiones usando certificados autofirmados generados por vos mismo.  
 ➡️ Así evitás depender de Let's Encrypt o de tener acceso externo, y podés mantener tu red completamente cerrada.
 
 🧭 **Acceso limpio y seguro por nombre de dominio**:
-Asignás nombres como https://pihole.local o https://nextcloud.local, y Caddy los redirige automáticamente al servicio correspondiente.
+Asignás nombres como https://pihole.local o https://nextcloud.local, y Caddy los redirige automáticamente al servicio correspondiente.  
 ➡️ Más fácil de recordar, más seguro que IPs o puertos raros, y sin necesidad de configuraciones engorrosas en cada contenedor.
 
 🌐 **Integración simple con redes Docker personalizadas**:
-Caddy se comunica con otros contenedores gracias a una red dedicada llamada proxy. Solo él necesita estar en esa red.
+Caddy se comunica con otros contenedores gracias a una red dedicada llamada proxy. Solo él necesita estar en esa red.  
 ➡️ El resto de tus servicios pueden mantenerse aislados, reduciendo el riesgo y mejorando la organización.
 
 🛠️ **Compatible con Pi-hole + Unbound**:
-Este stack está pensado para integrarse directamente con la configuración de DNS recursivo documentada en el repositorio dns-recursivo-pihole-unbound.
+Este stack está pensado para integrarse directamente con la configuración de DNS recursivo documentada en el repositorio dns-recursivo-pihole-unbound.  
 ➡️ Si ya usás esa guía, solo tenés que añadir este bloque al final del mismo docker-compose.yml.
 
 📦 **100% local, 0% dependencia externa**:
-Todo el stack funciona dentro de tu servidor. No requiere acceso a internet para emitir o renovar certificados.
+Todo el stack funciona dentro de tu servidor. No requiere acceso a internet para emitir o renovar certificados.  
 ➡️ Ideal para entornos cerrados, autohospedados y seguros.
 
 # ⚙️ Configuración paso a paso
