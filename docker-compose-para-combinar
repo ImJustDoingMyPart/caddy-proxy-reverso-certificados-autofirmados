@@ -1,0 +1,16 @@
+  # Asegurate de descomentar (quitarle los numerales) a las líneas proxy external que están más arriba en nuestro stack de Pihole y Unbound
+    
+  caddy:
+    container_name: caddy
+    image: caddy:latest
+    hostname: caddy
+    networks:
+      - proxy # Sólo Caddy necesita estar en la red del proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /compose/data/caddy/config/Caddyfile:/etc/caddy/Caddyfile
+      - /compose/data/caddy/data:/data
+      - /compose/data/caddy/certs:/etc/caddy/certs
+    restart: unless-stopped
