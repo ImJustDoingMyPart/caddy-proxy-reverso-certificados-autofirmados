@@ -1,0 +1,14 @@
+# Dominio para acceder a Pi-hole
+https://pihole.local {
+    tls /etc/caddy/certs/server.crt /etc/caddy/certs/server.key
+    # Redirige el tráfico al contenedor de Pi-hole por su nombre.
+    # Caddy lo encontrará automáticamente en la red 'proxy'. ¡Más limpio!
+    reverse_proxy pihole:80
+}
+
+# El siguiente es el que podes tomar de ejemplo para futuros servicios. 
+https://omv.local {
+    tls /etc/caddy/certs/server.crt /etc/caddy/certs/server.key
+    reverse_proxy 192.168.0.20:95
+    # La IP es un ejemplo, tenés que poner la que corresponda a tu interfaz de OMV, al igual que el puerto.
+}
